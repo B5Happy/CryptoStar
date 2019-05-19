@@ -100,7 +100,8 @@ it('lets 2 users exchange stars', async() => {
     // 2. Call the exchangeStars functions implemented in the Smart Contract
     await instance.exchangeStars(starId1, starId2, {from: user1});
     // 3. Verify that the owners changed
-    assert(await instance.ownerOf.call(starId1), user2);
+    let starOwner = await instance.ownerOf.call(starId2);
+    assert(starOwner, user1);
 });
 
 it('lets a user transfer a star', async() => {

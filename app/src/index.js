@@ -39,17 +39,13 @@ const App = {
     App.setStatus("New Star Owner is " + this.account + ".");
   },
 
-  tokenIdToStarInfo: async function() {
+  // Implement Task 4 Modify the front end of the DAPP
+  lookUp: async function() {
     const { tokenIdToStarInfo } = this.meta.methods;
     const id = document.getElementById("lookid").value;
     let res = await tokenIdToStarInfo(id).send({from: this.account});
     App.setStatus("Star info of" + this.id + " is " + res + ".");
   },
-
-  // Implement Task 4 Modify the front end of the DAPP
-  lookUp: async function (){
-    
-  }
 
 };
 
